@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Star Wars Timeline Tracker</title>
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#111">
+
+<style>
+body { font-family: Arial; margin:0; background:#111; color:white; }
+header { padding:12px; background:#222; position:sticky; top:0; }
+input, button { padding:10px; margin:5px; }
+.item { padding:10px; border-bottom:1px solid #333; }
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>Timeline Tracker</h2>
+<input id="title" placeholder="Book title">
+<input id="era" placeholder="Era">
+<button onclick="addItem()">Add</button>
+</header>
+
+<div id="list"></div>
+
+<script src="db.js"></script>
+<script src="app.js"></script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js');
+}
+</script>
+
+</body>
+</html>
